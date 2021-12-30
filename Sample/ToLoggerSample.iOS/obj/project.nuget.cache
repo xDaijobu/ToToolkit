@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "f0dz4OYTqMWyQCloyubJSptgK8ATQi+/8hb2XcGyJdLgtWQ0GPwp+rxnXZwfl6ORNhvB+UorX0ZE6zgiwsBDyA==",
+  "success": true,
+  "projectFilePath": "/Users/imac/oweb/Mobile/Xamarin/Packages/ToLogger/Sample/ToLoggerSample.iOS/ToLoggerSample.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/imac/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.essentials/1.6.1/xamarin.essentials.1.6.1.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.forms/5.0.0.2012/xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

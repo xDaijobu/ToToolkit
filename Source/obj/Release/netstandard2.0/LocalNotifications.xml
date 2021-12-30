@@ -1,0 +1,146 @@
+﻿<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToLogger</name>
+    </assembly>
+    <members>
+        <member name="M:ToLogger.INotificationService.Show(System.Int32,System.String,System.String,System.String,ToLogger.AndroidOptions,ToLogger.iOSOptions)">
+            <summary>
+            Show notification...........
+            </summary>
+        </member>
+        <member name="M:ToLogger.INotificationService.ShowHourly(System.Int32,System.String,System.String,ToLogger.Time,System.String,ToLogger.AndroidOptions,ToLogger.iOSOptions)">
+            <summary>
+            Show a notification on an hourly interval ( Once per hour )
+            </summary>
+        </member>
+        <member name="M:ToLogger.INotificationService.ShowDaily(System.Int32,System.String,System.String,ToLogger.Time,System.String,ToLogger.AndroidOptions,ToLogger.iOSOptions)">
+            <summary>
+            Show a notification on a daily interval ( Once per day )
+            </summary>
+        </member>
+        <member name="M:ToLogger.INotificationService.ShowWeekly(System.Int32,System.String,System.String,ToLogger.Day,ToLogger.Time,System.String,ToLogger.AndroidOptions,ToLogger.iOSOptions)">
+            <summary>
+            Show a notification on a weekly interval ( Once every week )
+            </summary>
+        </member>
+        <member name="M:ToLogger.INotificationService.Schedule(System.Int32,System.String,System.String,System.DateTime,System.String,ToLogger.AndroidOptions,ToLogger.iOSOptions)">
+            <summary>
+            Schedules a notification to be shown at the specified time
+            </summary>
+        </member>
+        <member name="T:ToLogger.NotificationCenter">
+            <summary>
+            Cross platform INotificationService Resolver.
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationCenter.Current">
+            <summary>
+            Platform specific INotificationService.
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationConstans.DEFAULT_CHANNEL_ID">
+            <summary>
+            Sound On &amp; Vibration On ( default )
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationConstans.CHANNEL_ID_WITHOUT_SOUND_AND_VIBRATION">
+            <summary>
+            No sound &amp; No Vibration
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationConstans.CHANNEL_ID_WITHOUT_SOUND">
+            <summary>
+            No Sound
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationConstans.CHANNEL_ID_WITHOUT_VIBRATION">
+            <summary>
+            No Vibration
+            </summary>
+        </member>
+        <member name="T:ToLogger.NotificationPriority">
+            <summary>
+            Priority for notifications on Android 7.1 and lower
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationPriority.Min">
+            <summary>
+            Lowest notification priority, these items might not be shown to the user except under special circumstances, such as detailed notification logs.
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationPriority.Low">
+            <summary>
+            Lower notification priority, for items that are less important.
+            The UI may choose to show these items smaller, or at a different position in the list, compared with your app's Default items.
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationPriority.Default">
+            <summary>
+            If your application does not prioritize its own notifications, use this value for all notifications.
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationPriority.High">
+            <summary>
+            Higher notification priority, for more important notifications or alerts.
+            The UI may choose to show these items larger, or at a different position in notification lists, compared with your app's Default items.
+            </summary>
+        </member>
+        <member name="F:ToLogger.NotificationPriority.Max">
+            <summary>
+            Highest notification priority, for your application's most important items that require the user's prompt attention or input.
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.NotificationId">
+            <summary>
+            Harus Unique !
+            ~if identifier is not unique, a new notification request object is not created~
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.Title">
+            <summary>
+            Title for notification
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.Description">
+            <summary>
+            Detaisl for the notification
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.CalledAt">
+            <summary>
+            the time the notification function was called.
+            </summary>FBADGE
+        </member>
+        <member name="P:ToLogger.NotificationRequest.LastCalledAt">
+            <summary>
+            In DateTime
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.Payload">
+            <summary>
+            Returning Payload when tapped on notification
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationRequest.Android">
+            <summary>
+            Android only..
+            </summary>
+        </member>
+        <member name="P:ToLogger.NotificationService.Current">
+            <summary>
+            Platform specific INotificationService.
+            </summary>
+        </member>
+        <member name="M:ToLogger.Time.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Hour &lt; 23 , Minute &lt; 59 , Second &lt; 59 | 
+            </summary>
+        </member>
+        <member name="M:ToLogger.Time.#ctor(System.String)">
+            <summary>
+            </summary>
+            <param name="time">HH24:MM:ss</param>
+        </member>
+    </members>
+</doc>

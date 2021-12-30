@@ -1,0 +1,64 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;MonoAndroid10.0;Xamarin.iOS10</TargetFrameworks>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+    <NeutralLanguage>en</NeutralLanguage>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Cristover Wurangian</Authors>
+    <PackageTags>android, ios, xamarin, xamarin.forms, local, notification, local.notification</PackageTags>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<Copyright>Copyright © Makmur Supra Nusantara</Copyright>
+    <Version>2.0.0</Version>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- <CodeAnalysisRuleSet>ToLogger.ruleset</CodeAnalysisRuleSet> -->
+
+	<!-- <PackageReadmeFile>README.md</PackageReadmeFile> -->
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>ToLogger</PackageId> 
+    <PackageVersion>2.0</PackageVersion>
+    <Configurations>Release;Debug</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>obj\Debug\netstandard2.0\ToLogger.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="**/Platform/**/*.cs" />
+  </ItemGroup>
+ 
+  <ItemGroup Condition="$(TargetFramework.StartsWith('MonoAndroid'))">
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.6.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Platform\Droid\" />
+    <None Remove="Platform\iOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Platform\Droid\" />
+    <Folder Include="Platform\iOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Platform\Droid\LogCenter.cs">
+      <SubType></SubType>
+    </Compile>
+  </ItemGroup>
+</Project> 

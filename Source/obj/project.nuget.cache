@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "bcmqYjbz2U3Y1GHPkhmPhAXoHkzANQZkgZPDb88oxpfFWZZn60j/GRrrIlV59Y5FV8KArhfKc9oCaaVtVEPQ+Q==",
+  "success": true,
+  "projectFilePath": "/Users/imac/oweb/Mobile/Xamarin/Packages/ToLogger/Source/ToLogger.csproj",
+  "expectedPackageFiles": [
+    "/Users/imac/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/imac/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.annotation/1.2.0.3/xamarin.androidx.annotation.1.2.0.3.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.annotation.experimental/1.1.0.3/xamarin.androidx.annotation.experimental.1.1.0.3.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.arch.core.common/2.1.0.11/xamarin.androidx.arch.core.common.2.1.0.11.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.arch.core.runtime/2.1.0.11/xamarin.androidx.arch.core.runtime.2.1.0.11.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.collection/1.1.0.10/xamarin.androidx.collection.1.1.0.10.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.core/1.6.0.3/xamarin.androidx.core.1.6.0.3.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.lifecycle.common/2.3.1.3/xamarin.androidx.lifecycle.common.2.3.1.3.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.lifecycle.runtime/2.3.1.4/xamarin.androidx.lifecycle.runtime.2.3.1.4.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.migration/1.0.8/xamarin.androidx.migration.1.0.8.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.multidex/2.0.1.5/xamarin.androidx.multidex.2.0.1.5.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.androidx.versionedparcelable/1.1.1.10/xamarin.androidx.versionedparcelable.1.1.1.10.nupkg.sha512"
+  ],
+  "logs": []
+}

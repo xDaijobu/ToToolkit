@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ToLogger</id>
+    <version>1.0.0</version>
+    <authors>Cristover Wurangian</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Package Description</description>
+    <copyright>Copyright © Makmur Supra Nusantara</copyright>
+    <tags>android, ios, xamarin, xamarin.forms, local, notification, local.notification</tags>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="MonoAndroid10.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.AndroidX.Core" version="1.6.0.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="Xamarin.iOS1.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Java.Interop" targetFramework="MonoAndroid10.0" />
+      <frameworkAssembly assemblyName="System.Drawing.Common.dll" targetFramework="Xamarin.iOS1.0" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="/Users/imac/oweb/Mobile/Xamarin/Packages/ToLogger/Source/bin/Debug/netstandard2.0/ToLogger.pdb" target="lib/netstandard2.0/ToLogger.pdb" />
+    <file src="/Users/imac/oweb/Mobile/Xamarin/Packages/ToLogger/Source/bin/Debug/monoandroid10.0/ToLogger.pdb" target="lib/monoandroid10.0/ToLogger.pdb" />
+    <file src="/Users/imac/oweb/Mobile/Xamarin/Packages/ToLogger/Source/bin/Debug/xamarin.ios10/ToLogger.pdb" target="lib/xamarinios10/ToLogger.pdb" />
+  </files>
+</package>
