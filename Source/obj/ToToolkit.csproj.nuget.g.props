@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/imac/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/imac/.nuget/packages/</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.9.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="/Users/imac/.nuget/packages/" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'monoandroid11.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xamarin.androidx.migration/1.0.8/buildTransitive/monoandroid90/Xamarin.AndroidX.Migration.props" Condition="Exists('$(NuGetPackageRoot)xamarin.androidx.migration/1.0.8/buildTransitive/monoandroid90/Xamarin.AndroidX.Migration.props')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props')" />
+  </ImportGroup>
+  <ImportGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/5.0.0.1905/buildTransitive/Xamarin.Forms.props')" />
+  </ImportGroup>
+</Project>

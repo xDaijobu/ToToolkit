@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ToToolkitSample.Pages.Views.CameraViewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ToToolkitSample.Controls"
+    xmlns:toolkit="clr-namespace:ToToolkit.Views;assembly=ToToolkit"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+    <Grid>
+        <!--  first layer  -->
+        <toolkit:CameraView
+            x:Name="cameraPreview"
+            CameraOptions="Front"
+            MediaCaptureFailed="cameraPreview_MediaCaptureFailed"
+            MediaCaptured="cameraPreview_MediaCaptured" />
+        <StackLayout
+            x:Name="MainLayout"
+            Padding="10"
+            Orientation="Vertical"
+            Spacing="0">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="StartAndExpand">
+                <!--  Button Close  -->
+                <Path
+                    x:Name="btnClose"
+                    xct:TouchEffect.Command="{Binding CloseCommand}"
+                    xct:TouchEffect.HoveredOpacity="0.8"
+                    xct:TouchEffect.PressedOpacity="0.5"
+                    Aspect="Uniform"
+                    Data="M28.5,9.62L26.38,7.5 18,15.88 9.62,7.5 7.5,9.62 15.88,18 7.5,26.38l2.12,2.12L18,20.12l8.38,8.38 2.12,-2.12L20.12,18z"
+                    Fill="White"
+                    HeightRequest="25"
+                    HorizontalOptions="StartAndExpand"
+                    WidthRequest="25" />
+
+                <!--  Button Flash  -->
+                <Path
+                    x:Name="btnFlash"
+                    xct:TouchEffect.Command="{Binding TorchSwitchCommand}"
+                    xct:TouchEffect.HoveredOpacity="0.8"
+                    xct:TouchEffect.PressedOpacity="0.5"
+                    Aspect="Uniform"
+                    Fill="White"
+                    HeightRequest="25"
+                    HorizontalOptions="EndAndExpand"
+                    WidthRequest="25">
+                    <Path.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference cameraPreview}, Path=FlashMode}"
+                            TargetType="Path"
+                            Value="{x:Static toolkit:FlashMode.Off}">
+                            <Setter Property="Data" Value="M3.27,3L2,4.27l5,5V13h3v9l3.58,-6.14L17.73,20 19,18.73 3.27,3zM17,10h-4l4,-8H7v2.18l8.46,8.46L17,10z" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference cameraPreview}, Path=FlashMode}"
+                            TargetType="Path"
+                            Value="{x:Static toolkit:FlashMode.On}">
+                            <Setter Property="Data" Value="M7,2v11h3v9l7,-12h-4l4,-8z" />
+                        </DataTrigger>
+                    </Path.Triggers>
+                </Path>
+            </StackLayout>
+
+            <CollectionView
+                x:Name="ImagesView"
+                Margin="0,5"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                HorizontalScrollBarVisibility="Never"
+                SelectionMode="None"
+                VerticalOptions="End"
+                VerticalScrollBarVisibility="Never">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            xct:TouchEffect.Command="{Binding Path=BindingContext.PreviewPhotoCommand, Source={x:Reference ImagesView}}"
+                            xct:TouchEffect.CommandParameter="{Binding .}"
+                            xct:TouchEffect.HoveredOpacity="0.8"
+                            xct:TouchEffect.PressedOpacity="0.5"
+                            Aspect="Fill"
+                            HeightRequest="50"
+                            Source="{Binding Source}"
+                            WidthRequest="50" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <!--  Open Gallery  -->
+                <Path
+                    Grid.Column="0"
+                    xct:TouchEffect.Command="{Binding OpenGalleryCommand}"
+                    xct:TouchEffect.HoveredOpacity="0.8"
+                    xct:TouchEffect.PressedOpacity="0.5"
+                    Data="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"
+                    Fill="White"
+                    HorizontalOptions="StartAndExpand"
+                    Scale="1.25"
+                    VerticalOptions="Center" />
+
+                <!--  Take Photo  -->
+                <StackLayout Grid.Column="1" Orientation="Vertical">
+                    <Path
+                        x:Name="btnTakePhoto"
+                        xct:TouchEffect.Command="{Binding TakePhotoCommand}"
+                        xct:TouchEffect.HoveredOpacity="0.8"
+                        xct:TouchEffect.PressedOpacity="0.5"
+                        Aspect="Fill"
+                        Data="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.42,0 -8,-3.58 -8,-8s3.58,-8 8,-8 8,3.58 8,8 -3.58,8 -8,8z"
+                        Fill="White"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="50" />
+
+                    <Label
+                        FontSize="Small"
+                        HorizontalTextAlignment="Center"
+                        Text="Tap for photo"
+                        TextColor="White"
+                        VerticalTextAlignment="End" />
+                </StackLayout>
+
+                <!--  Camera Switch  -->
+                <Grid
+                    x:Name="btnSwitchCam"
+                    Grid.Column="2"
+                    xct:TouchEffect.Command="{Binding CameraSwitchCommand}"
+                    xct:TouchEffect.HoveredOpacity="0.8"
+                    xct:TouchEffect.PressedOpacity="0.5"
+                    ColumnSpacing="0"
+                    HorizontalOptions="EndAndExpand"
+                    RowSpacing="0"
+                    Scale="1.25"
+                    VerticalOptions="Center">
+                    <Path Data="M16,7h-1l-1,-1h-4L9,7H8C6.9,7 6,7.9 6,9v6c0,1.1 0.9,2 2,2h8c1.1,0 2,-0.9 2,-2V9C18,7.9 17.1,7 16,7zM12,14c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2s2,0.9 2,2C14,13.1 13.1,14 12,14z" Fill="White" />
+                    <Path Data="M8.57,0.51l4.48,4.48V2.04c4.72,0.47 8.48,4.23 8.95,8.95c0,0 2,0 2,0C23.34,3.02 15.49,-1.59 8.57,0.51z" Fill="White" />
+                    <Path Data="M10.95,21.96C6.23,21.49 2.47,17.73 2,13.01c0,0 -2,0 -2,0c0.66,7.97 8.51,12.58 15.43,10.48l-4.48,-4.48V21.96z" Fill="White" />
+                </Grid>
+            </Grid>
+        </StackLayout>
+
+        <controls:ImagePreview x:Name="BigImage" />
+
+    </Grid>
+
+</ContentPage>
+

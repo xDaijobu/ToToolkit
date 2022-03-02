@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "cXas/9iiycIF3NTyOMB4YYHDce71/10eUd9Zq/a2B46Fuadi+m2OXXp6jajMpqNc2/vzKSNZyRFrFAfmUH6VkA==",
+  "success": true,
+  "projectFilePath": "/Users/imac/oweb/Mobile/Xamarin/Packages/ToToolkit/Sample/ToToolkitSample/ToToolkitSample.iOS/ToToolkitSample.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/imac/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.communitytoolkit/1.3.2/xamarin.communitytoolkit.1.3.2.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/imac/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "/Users/imac/.nuget/packages/totoolkit/1.0.8/totoolkit.1.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

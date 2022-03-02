@@ -1,0 +1,80 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;monoandroid11.0;Xamarin.iOS10</TargetFrameworks>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+    <NeutralLanguage>en</NeutralLanguage>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Makmur Supra Nusantara</Authors>
+    <PackageTags>android, ios, xamarin, xamarin.forms, camera view, custom view</PackageTags>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Copyright>Copyright © Makmur Supra Nusantara</Copyright>
+    <AssemblyVersion>1.0.8</AssemblyVersion>
+    <AssemblyFileVersion>1.0.8</AssemblyFileVersion>
+    <Version>1.0.8</Version>
+    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <!-- <CodeAnalysisRuleSet>ToToolkit.ruleset</CodeAnalysisRuleSet> -->
+
+	<!-- <PackageReadmeFile>README.md</PackageReadmeFile> -->
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>ToToolkit</PackageId> 
+    <Configurations>Release;Debug</Configurations>
+
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/*.shared.cs" />
+    <Compile Include="**/*.shared.*.cs" />    
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1905" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+  </ItemGroup>
+ 
+  <ItemGroup Condition=" $(TargetFramework.StartsWith ('MonoAndroid', StringComparison.OrdinalIgnoreCase)) ">
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.6.0.3" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.0.2" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.0.2" />
+    <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.0.0.5-alpha20" />
+
+    <Compile Include="**\*.android.cs" />
+    <Compile Include="**\*.android.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="**\*.ios.cs" />
+    <Compile Include="**\*.ios.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <Compile Include="**/*.netstandard.cs" />
+    <Compile Include="**/*.netstandard*.cs" />
+    <!-- Remove obj to prevent stale code from other implementations from being included -->
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>obj\Debug\netstandard2.0\ToToolkit.xml</DocumentationFile>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+</Project> 

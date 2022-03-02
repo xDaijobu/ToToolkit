@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="ToToolkitSample.Controls.ImagePreview"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Padding="10"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="FillAndExpand">
+    <Grid>
+        <Image
+            x:Name="imageView"
+            Aspect="AspectFit"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
+
+        <Path
+            x:Name="btnClose"
+            xct:TouchEffect.HoveredOpacity="0.8"
+            xct:TouchEffect.PressedOpacity="0.5"
+            Aspect="Uniform"
+            Data="M28.5,9.62L26.38,7.5 18,15.88 9.62,7.5 7.5,9.62 15.88,18 7.5,26.38l2.12,2.12L18,20.12l8.38,8.38 2.12,-2.12L20.12,18z"
+            Fill="White"
+            HeightRequest="25"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            WidthRequest="25" />
+
+        <Path
+            x:Name="btnOk"
+            xct:TouchEffect.HoveredOpacity="0.8"
+            xct:TouchEffect.PressedOpacity="0.5"
+            Aspect="Uniform"
+            Data="M9,16.2L4.8,12l-1.4,1.4L9,19 21,7l-1.4,-1.4L9,16.2z"
+            Fill="White"
+            HeightRequest="25"
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            WidthRequest="25" />
+    </Grid>
+</ContentView>
